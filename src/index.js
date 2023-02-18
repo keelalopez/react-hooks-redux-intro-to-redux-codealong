@@ -6,7 +6,13 @@ import counterReducer from "./features/counter/counterSlice.js";
 import App from "./App";
 import "./index.css";
 
-const store = createStore(counterReducer);
+// const store = createStore(counterReducer);
+
+// UPTADE TO CONNECT TO EXTENSION
+const store = createStore(
+    counterReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 
 // code change - added Provider to wrap around App
 ReactDOM.render(
